@@ -1,0 +1,42 @@
+body{
+	background: url(bg.jpeg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	color: #fff;
+	height: 100vh;
+	overflow: hidden;
+}
+
+section{
+	height: 100%;
+}
+
+.container{
+	width: 90%;
+	max-width: 1156px;
+	margin: auto;
+}
+
+.keys{
+	display: flex;
+	height: 100%;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	align-items: center;
+	font-size: 1.5em;	
+}
+
+.key{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border: 2px solid #fff;
+	padding: 2%;
+	border-radius: 5%;
+}
+
+.play{
+	border: 5px solid #db1515;
+	background: rgba(219, 21, 21, 0.5);
+}
+
