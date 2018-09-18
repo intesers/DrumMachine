@@ -22,3 +22,4 @@ function playSound(e){
 
 
 window.addEventListener('keydown', playSound); // executes function playSound when keys are pressed.
+window.addEventListener('touchdown', playSound); // executes function playSound when keys are pressed.
