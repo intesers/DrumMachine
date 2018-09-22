@@ -1,9 +1,6 @@
-function playSound(e) {
-
-    const keyCode = e.keyCode ? e.keyCode : e.currentTarget.getAttribute('data-key');
-
-    const audio = document.querySelector(`audio[data-key="${keyCode}"]`);
-    const key = document.querySelector(`.key[data-key="${keyCode}"]`);
+function playSound(e){
+    const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+    const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
 
 
     if(!audio) return; //If there is corresponding key, it stops the function.
@@ -16,9 +13,10 @@ function playSound(e) {
     setTimeout(function(){
         key.classList.remove('play');
     }, 100);
+
+
+
 }
 
 
-
-
-window.addEventListener('touchstart', playSound); // executes function playSound when keys are pressed.
+window.addEventListener('keydown', playSound); // executes function playSound when keys are pressed.
