@@ -1,21 +1,21 @@
-function playSound(e){
-	const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
-	const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+function playSound(e) {
 
-	
-	if(!audio) return; //If there is corresponding key, it stops the function.
-	audio.currentTime = 0; // Rewinds the audio. 
-	audio.play(); //plays the audio
+    const keyCode = e.keyCode ? e.keyCode : e.currentTarget.getAttribute('data-key');
+
+    const audio = document.querySelector(`audio[data-key="${keyCode}"]`);
+    const key = document.querySelector(`.key[data-key="${keyCode}"]`);
 
 
-	key.classList.add('play'); //adds the css class play when the key is pressed (for visual effects)
-
-	setTimeout(function(){
-		key.classList.remove('play');
-	}, 100);
+    if(!audio) return; //If there is corresponding key, it stops the function.
+    audio.currentTime = 0; // Rewinds the audio. 
+    audio.play(); //plays the audio
 
 
+    key.classList.add('play'); //adds the css class play when the key is pressed (for visual effects)
 
+    setTimeout(function(){
+        key.classList.remove('play');
+    }, 100);
 }
 
 
